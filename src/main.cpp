@@ -44,5 +44,30 @@ void test_network() {
 }
 
 int main() {
-    test_network();
+    // test_network();
+    sf::RenderWindow window(sf::VideoMode(800, 600), "Test window");
+    window.setFramerateLimit(60);
+
+    //Start of the window loop
+    while (window.isOpen()) {
+
+        // Start of the event loop
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            // "close requested" event: we close the window
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
+
+        //Start of the display procedure
+        window.clear();
+        window.display();
+    }
+
+    Eigen::Vector2f new_v;
+    new_v << 0.3, 0.4;
+    std::cout << "Nevo: \n" << new_v <<std::endl;
+
+    return 0;
 }
