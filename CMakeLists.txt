@@ -25,7 +25,12 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(Eigen)
 
 # Main executable
-add_executable(main src/main.cpp src/Network.h src/Network.cpp src/Object.h src/Object.cpp)
+add_executable(main src/main.cpp src/Network.h src/Network.cpp src/Object.h src/Object.cpp
+        src/Textbox.cpp
+        src/Textbox.h
+        src/Button.cpp
+        src/Button.h
+        src/resources.h)
 target_link_libraries(main PRIVATE sfml-graphics Eigen3::Eigen)
 target_compile_features(main PRIVATE cxx_std_17)
 

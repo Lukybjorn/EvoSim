@@ -20,15 +20,17 @@ enum class PROCESSING_TYPE {
 
 class Network {
 private:
-    const int _input_nodes;
-    const int _processing_layers;
-    std::vector<int> _processing_nodes;
-    const int _output_nodes;
+    const int _input_nodes = 2;
+    const int _processing_layers = 1;
+    std::vector<int> _processing_nodes = {2};
+    const int _output_nodes = 2;
     Eigen::VectorXf _input_vector;
     std::vector<Eigen::VectorXf> _processing_vectors;
     std::vector<Eigen::MatrixXf> _connection_matrices;
     Eigen::VectorXf _output_vector;
 public:
+    Network() = default;
+
     /**
      * @brief constructor for the Network class
      * @param input_nodes number of nodes in the input layer
